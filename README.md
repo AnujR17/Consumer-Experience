@@ -1,6 +1,6 @@
 # Consumer Experience in Retail: A Comprehensive Analysis Report
 
-> **A PhD-Level Statistical Analysis of Consumer Retail Experience**  
+> **A Comprehensive Statistical Analysis of Consumer Retail Experience**  
 > Exploring what shapes the shopping experience and how consumers can be meaningfully segmented
 
 ---
@@ -100,10 +100,10 @@ Before analyzing the data, we verified that our survey questions reliably measur
 ### Reliability Results
 
 | Scale | Cronbach's Alpha | Verdict |
-|-------|------------------|---------|
-| **Overall Scale** | 0.879 | ✅ Excellent |
-| **Store Environment** | 0.834 | ✅ Good |
-| **Visual Merchandising** | 0.795 | ✅ Good |
+|-------|------------------|---------||
+| **Overall Scale (23 items)** | 0.799 | ✅ Acceptable |
+| **Store Importance (16 items)** | 0.780 | ✅ Acceptable |
+| **Visual Merchandising (7 items)** | 0.684 | ⚠️ Questionable |
 
 **What these numbers mean:**
 - Cronbach's Alpha measures internal consistency (how well items "hang together")
@@ -390,9 +390,6 @@ Store Environment ─────(c' = 0.62)─────→ Overall Experienc
 
 **Result**: ✅ **Perfect ML Classification**—the clusters are so distinct that a simple logistic regression achieves 100% accuracy.
 
-![Cluster Validation](figures/phase7_cluster_validation.png)
-*Figure: Phase 7 validation results summary*
-
 ### Key Insight
 > Our two consumer segments are not statistical artifacts—they represent genuinely different consumer types. With 98.7% classification accuracy and validated mediation effects, retailers can confidently use these segments for targeting strategies.
 
@@ -417,7 +414,6 @@ Store Environment ─────(c' = 0.62)─────→ Overall Experienc
 | `phase6_ipa_matrix.png` | Priority matrix | Concentrate Here quadrant = priority |
 | `phase6_importance_ranking.png` | Attribute priorities | Cleanliness, parking top the list |
 | `phase6_radar_segments.png` | Segment profiles | Visual shoppers more demanding |
-| `phase7_cluster_validation.png` | Validation summary | Segments are statistically robust |
 
 ---
 
@@ -526,5 +522,5 @@ Consumer-Experience/
 ---
 
 **Report Generated**: Consumer Experience Analysis Pipeline  
-**Analysis Framework**: PhD-Level Multivariate Statistical Analysis  
+**Analysis Framework**: Multivariate Statistical Analysis  
 **Validation Status**: All key findings statistically validated (p < .001)
