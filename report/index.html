@@ -1,0 +1,2349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consumer Experience in Retail Environment | Research Analysis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/charts.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <span>Consumer Experience Research</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#hero" class="nav-link active">Overview</a></li>
+                <li><a href="#demographics" class="nav-link">Demographics</a></li>
+                <li><a href="#eda" class="nav-link">Exploration</a></li>
+                <li><a href="#validation" class="nav-link">Validation</a></li>
+                <li><a href="#factor-analysis" class="nav-link">Factor Analysis</a></li>
+                <li><a href="#inferential" class="nav-link">Inferential</a></li>
+                <li><a href="#regression" class="nav-link">Regression</a></li>
+                <li><a href="#clustering" class="nav-link">Clustering</a></li>
+                <li><a href="#conclusions" class="nav-link">Conclusions</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-background">
+            <div class="hero-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+                <div class="shape shape-4"></div>
+            </div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                Consumer Experience in
+                <span class="gradient-text">Retail Environment</span>
+            </h1>
+            <p class="hero-subtitle">
+                A comprehensive statistical analysis exploring store attributes, visual merchandising impact, 
+                and consumer segmentation in modern retail settings
+            </p>
+            
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-number" data-count="154">0</span>
+                        <span class="stat-label">Respondents</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-number" data-count="23">0</span>
+                        <span class="stat-label">Variables Analyzed</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-number" data-count="5">0</span>
+                        <span class="stat-label">Factors Extracted</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-object-group"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-number" data-count="2">0</span>
+                        <span class="stat-label">Consumer Segments</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-cta">
+                <a href="#research-overview" class="btn btn-primary">
+                    <i class="fas fa-arrow-down"></i>
+                    Explore Analysis
+                </a>
+                <a href="#methodology" class="btn btn-outline">
+                    <i class="fas fa-flask"></i>
+                    Methodology
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Overview Section -->
+    <section id="research-overview" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Introduction</span>
+                <h2 class="section-title">Research Overview</h2>
+                <p class="section-description">
+                    Understanding consumer behavior and preferences in retail environments through rigorous statistical analysis
+                </p>
+            </div>
+
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <div class="overview-icon" style="background: linear-gradient(135deg, #4DA3FF, #2AA8A1);">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Research Objective</h3>
+                    <p>
+                        To investigate the relationship between store attributes, visual merchandising elements, 
+                        and consumer experience in retail environments, identifying key factors that influence 
+                        shopping behavior and purchase decisions.
+                    </p>
+                </div>
+
+                <div class="overview-card">
+                    <div class="overview-icon" style="background: linear-gradient(135deg, #FFD55E, #FF9E8C);">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <h3>Research Questions</h3>
+                    <ul class="overview-list">
+                        <li>What store attributes do consumers consider most important?</li>
+                        <li>How effective are visual merchandising elements in influencing purchases?</li>
+                        <li>Do demographic factors affect consumer preferences?</li>
+                        <li>Can distinct consumer segments be identified?</li>
+                    </ul>
+                </div>
+
+                <div class="overview-card">
+                    <div class="overview-icon" style="background: linear-gradient(135deg, #52D681, #2AA8A1);">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Analysis Framework</h3>
+                    <ul class="overview-list">
+                        <li>Descriptive Statistics & Demographics</li>
+                        <li>Scale Validation & Reliability Testing</li>
+                        <li>Exploratory Factor Analysis (EFA)</li>
+                        <li>Inferential Statistics (ANOVA, t-tests, χ²)</li>
+                        <li>Correlation & Regression Analysis</li>
+                        <li>K-Means Cluster Analysis</li>
+                    </ul>
+                </div>
+
+                <div class="overview-card">
+                    <div class="overview-icon" style="background: linear-gradient(135deg, #B490FF, #F26B6B);">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Key Findings Preview</h3>
+                    <ul class="overview-list">
+                        <li>Store cleanliness ranked as most important attribute</li>
+                        <li>In-store lighting & music most effective VM element</li>
+                        <li>Significant gender differences in value-seeking behavior</li>
+                        <li>Two distinct consumer segments identified</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology Section -->
+    <section id="methodology" class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Approach</span>
+                <h2 class="section-title">Methodology</h2>
+                <p class="section-description">
+                    Rigorous statistical procedures ensuring validity and reliability of findings
+                </p>
+            </div>
+
+            <div class="methodology-content">
+                <div class="methodology-left">
+                    <div class="method-card">
+                        <div class="method-number">01</div>
+                        <div class="method-content">
+                            <h4>Sample & Data Collection</h4>
+                            <p>
+                                Survey-based data collection with <strong>N = 154</strong> respondents. 
+                                Structured questionnaire with 5-point Likert scales measuring store attribute 
+                                importance and visual merchandising effectiveness.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="method-card">
+                        <div class="method-number">02</div>
+                        <div class="method-content">
+                            <h4>Scale Construction</h4>
+                            <p>
+                                Two primary scales developed: <strong>Store Attribute Importance (16 items)</strong> 
+                                and <strong>Visual Merchandising Impact (7 items)</strong>. Both scales underwent 
+                                rigorous reliability and validity testing.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="method-card">
+                        <div class="method-number">03</div>
+                        <div class="method-content">
+                            <h4>Statistical Tools</h4>
+                            <p>
+                                Analysis conducted using Python with scipy, statsmodels, pingouin, and 
+                                factor_analyzer libraries. Significance level set at <strong>α = 0.05</strong>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="methodology-right">
+                    <div class="specs-card">
+                        <h4><i class="fas fa-cogs"></i> Technical Specifications</h4>
+                        <div class="specs-grid">
+                            <div class="spec-item">
+                                <span class="spec-label">Sample Size</span>
+                                <span class="spec-value">N = 154</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Significance Level</span>
+                                <span class="spec-value">α = 0.05</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Scale Type</span>
+                                <span class="spec-value">5-point Likert</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Factor Rotation</span>
+                                <span class="spec-value">Promax (Oblique)</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Clustering Method</span>
+                                <span class="spec-value">K-Means</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Confidence Intervals</span>
+                                <span class="spec-value">95% CI</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="analysis-flow">
+                        <h4><i class="fas fa-project-diagram"></i> Analysis Pipeline</h4>
+                        <div class="flow-items">
+                            <div class="flow-item">
+                                <div class="flow-dot"></div>
+                                <span>Data Cleaning</span>
+                            </div>
+                            <div class="flow-item">
+                                <div class="flow-dot"></div>
+                                <span>Descriptive Analysis</span>
+                            </div>
+                            <div class="flow-item">
+                                <div class="flow-dot"></div>
+                                <span>Reliability Testing</span>
+                            </div>
+                            <div class="flow-item">
+                                <div class="flow-dot"></div>
+                                <span>Factor Analysis</span>
+                            </div>
+                            <div class="flow-item">
+                                <div class="flow-dot"></div>
+                                <span>Hypothesis Testing</span>
+                            </div>
+                            <div class="flow-item">
+                                <div class="flow-dot"></div>
+                                <span>Segmentation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Navigation Cards -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Navigate</span>
+                <h2 class="section-title">Analysis Sections</h2>
+                <p class="section-description">
+                    Jump to any section of the comprehensive analysis
+                </p>
+            </div>
+
+            <div class="nav-cards-grid">
+                <a href="#demographics" class="nav-card">
+                    <div class="nav-card-icon" style="background: linear-gradient(135deg, #4DA3FF, #2AA8A1);">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="nav-card-content">
+                        <h3>Demographic Profile</h3>
+                        <p>Gender, age, occupation, and education distributions of respondents</p>
+                    </div>
+                    <div class="nav-card-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+
+                <a href="#eda" class="nav-card">
+                    <div class="nav-card-icon" style="background: linear-gradient(135deg, #FFD55E, #FF9E8C);">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="nav-card-content">
+                        <h3>Exploratory Analysis</h3>
+                        <p>Shopping behaviors, frequencies, and attribute importance ratings</p>
+                    </div>
+                    <div class="nav-card-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+
+                <a href="#validation" class="nav-card">
+                    <div class="nav-card-icon" style="background: linear-gradient(135deg, #52D681, #2AA8A1);">
+                        <i class="fas fa-check-double"></i>
+                    </div>
+                    <div class="nav-card-content">
+                        <h3>Scale Validation</h3>
+                        <p>Cronbach's Alpha, KMO test, and reliability analysis</p>
+                    </div>
+                    <div class="nav-card-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+
+                <a href="#factor-analysis" class="nav-card">
+                    <div class="nav-card-icon" style="background: linear-gradient(135deg, #B490FF, #4DA3FF);">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <div class="nav-card-content">
+                        <h3>Factor Analysis</h3>
+                        <p>Exploratory factor analysis revealing underlying constructs</p>
+                    </div>
+                    <div class="nav-card-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+
+                <a href="#inferential" class="nav-card">
+                    <div class="nav-card-icon" style="background: linear-gradient(135deg, #F26B6B, #FF9E8C);">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <div class="nav-card-content">
+                        <h3>Inferential Statistics</h3>
+                        <p>ANOVA, t-tests, and Chi-square tests for group comparisons</p>
+                    </div>
+                    <div class="nav-card-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+
+                <a href="#regression" class="nav-card">
+                    <div class="nav-card-icon" style="background: linear-gradient(135deg, #2AA8A1, #52D681);">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="nav-card-content">
+                        <h3>Correlation & Regression</h3>
+                        <p>Relationships between factors and predictive modeling</p>
+                    </div>
+                    <div class="nav-card-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+
+                <a href="#clustering" class="nav-card">
+                    <div class="nav-card-icon" style="background: linear-gradient(135deg, #FF9E8C, #FFD55E);">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <div class="nav-card-content">
+                        <h3>Cluster Analysis</h3>
+                        <p>Consumer segmentation and segment profiling</p>
+                    </div>
+                    <div class="nav-card-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+
+                <a href="#conclusions" class="nav-card">
+                    <div class="nav-card-icon" style="background: linear-gradient(135deg, #4DA3FF, #B490FF);">
+                        <i class="fas fa-flag-checkered"></i>
+                    </div>
+                    <div class="nav-card-content">
+                        <h3>Conclusions</h3>
+                        <p>Key findings, implications, and recommendations</p>
+                    </div>
+                    <div class="nav-card-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demographics Section -->
+    <section id="demographics" class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Sample Profile</span>
+                <h2 class="section-title">Demographic Overview</h2>
+                <p class="section-description">
+                    Understanding the composition of our survey respondents (N = 154)
+                </p>
+            </div>
+            
+            <!-- Demographics Summary Stats -->
+            <div class="demo-stats-grid">
+                <div class="demo-stat-card">
+                    <div class="demo-stat-icon" style="background: linear-gradient(135deg, #F26B6B, #FF9E8C);">
+                        <i class="fas fa-venus-mars"></i>
+                    </div>
+                    <div class="demo-stat-content">
+                        <span class="demo-stat-number">62.3%</span>
+                        <span class="demo-stat-label">Female Respondents</span>
+                        <span class="demo-stat-detail">96 out of 154 total</span>
+                    </div>
+                </div>
+                <div class="demo-stat-card">
+                    <div class="demo-stat-icon" style="background: linear-gradient(135deg, #4DA3FF, #2AA8A1);">
+                        <i class="fas fa-birthday-cake"></i>
+                    </div>
+                    <div class="demo-stat-content">
+                        <span class="demo-stat-number">43.5%</span>
+                        <span class="demo-stat-label">Age 18-25 Years</span>
+                        <span class="demo-stat-detail">Largest age group</span>
+                    </div>
+                </div>
+                <div class="demo-stat-card">
+                    <div class="demo-stat-icon" style="background: linear-gradient(135deg, #52D681, #2AA8A1);">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="demo-stat-content">
+                        <span class="demo-stat-number">42.9%</span>
+                        <span class="demo-stat-label">Employed</span>
+                        <span class="demo-stat-detail">Paid employment</span>
+                    </div>
+                </div>
+                <div class="demo-stat-card">
+                    <div class="demo-stat-icon" style="background: linear-gradient(135deg, #B490FF, #4DA3FF);">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="demo-stat-content">
+                        <span class="demo-stat-number">62.3%</span>
+                        <span class="demo-stat-label">Degree Holders</span>
+                        <span class="demo-stat-detail">Bachelor's degree</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Grid -->
+            <div class="charts-grid charts-grid-2x2">
+                <!-- Gender Distribution -->
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3 class="chart-title">
+                            <i class="fas fa-venus-mars"></i>
+                            Gender Distribution
+                        </h3>
+                        <span class="chart-badge">N = 154</span>
+                    </div>
+                    <div class="chart-container chart-container-doughnut gender-chart chart-animate">
+                        <canvas id="genderChart"></canvas>
+                    </div>
+                    <div class="chart-insight">
+                        <i class="fas fa-lightbulb"></i>
+                        <p>The sample shows a <strong>female-dominant</strong> distribution with 62.3% female and 37.7% male respondents.</p>
+                    </div>
+                </div>
+
+                <!-- Age Distribution -->
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3 class="chart-title">
+                            <i class="fas fa-birthday-cake"></i>
+                            Age Distribution
+                        </h3>
+                        <span class="chart-badge">4 Groups</span>
+                    </div>
+                    <div class="chart-container chart-animate">
+                        <canvas id="ageChart"></canvas>
+                    </div>
+                    <div class="chart-insight">
+                        <i class="fas fa-lightbulb"></i>
+                        <p>Young adults (18-25) represent the <strong>largest segment</strong> at 43.5%, indicating a predominantly younger sample.</p>
+                    </div>
+                </div>
+
+                <!-- Occupation Distribution -->
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3 class="chart-title">
+                            <i class="fas fa-briefcase"></i>
+                            Occupation Distribution
+                        </h3>
+                        <span class="chart-badge">4 Categories</span>
+                    </div>
+                    <div class="chart-container chart-container-doughnut">
+                        <canvas id="occupationChart"></canvas>
+                    </div>
+                    <div class="chart-insight">
+                        <i class="fas fa-lightbulb"></i>
+                        <p><strong>Employed individuals</strong> (42.9%) and <strong>students</strong> (36.4%) dominate the sample, providing diverse perspectives.</p>
+                    </div>
+                </div>
+
+                <!-- Education Distribution -->
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3 class="chart-title">
+                            <i class="fas fa-graduation-cap"></i>
+                            Education Level
+                        </h3>
+                        <span class="chart-badge">3 Levels</span>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="educationChart"></canvas>
+                    </div>
+                    <div class="chart-insight">
+                        <i class="fas fa-lightbulb"></i>
+                        <p>The sample is <strong>highly educated</strong> with 95.5% holding a degree or postgraduate qualification.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gender × Age Cross-tabulation -->
+            <div class="chart-card chart-card-wide chart-animate" style="margin-top: 2rem;">
+                <div class="chart-header">
+                    <h3 class="chart-title">
+                        <i class="fas fa-venus-mars"></i>
+                        Gender × Age Cross-tabulation
+                    </h3>
+                    <span class="chart-badge">Demographics Breakdown</span>
+                </div>
+                <div class="chart-container" style="height: 300px;">
+                    <canvas id="genderAgeChart"></canvas>
+                </div>
+                <div class="chart-insight">
+                    <i class="fas fa-lightbulb"></i>
+                    <p>Female respondents dominate across all age groups, with the <strong>18-25 age bracket</strong> having the highest representation in both genders.</p>
+                </div>
+            </div>
+
+            <!-- Demographic Implications -->
+            <div class="implications-card">
+                <h3><i class="fas fa-clipboard-check"></i> Sample Characteristics Summary</h3>
+                <div class="implications-grid">
+                    <div class="implication-item">
+                        <div class="implication-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="implication-content">
+                            <h4>Representative Urban Sample</h4>
+                            <p>The demographic profile represents educated, urban consumers with diverse occupational backgrounds.</p>
+                        </div>
+                    </div>
+                    <div class="implication-item">
+                        <div class="implication-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="implication-content">
+                            <h4>Female-Dominant Perspective</h4>
+                            <p>With 62.3% female respondents, findings may better capture female consumer preferences.</p>
+                        </div>
+                    </div>
+                    <div class="implication-item">
+                        <div class="implication-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="implication-content">
+                            <h4>Young Adult Focus</h4>
+                            <p>The 18-25 age group dominance provides insights into millennial/Gen-Z shopping behaviors.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="eda" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Exploration</span>
+                <h2 class="section-title">Exploratory Data Analysis</h2>
+                <p class="section-description">
+                    Deep dive into shopping behaviors and attribute importance ratings
+                </p>
+            </div>
+
+            <!-- Shopping Behavior Section -->
+            <div class="eda-subsection">
+                <h3 class="subsection-title"><i class="fas fa-shopping-bag"></i> Shopping Behavior Patterns</h3>
+                
+                <div class="charts-grid charts-grid-2x2" style="grid-template-columns: 1fr 1fr;">
+                    <!-- Shopping Frequency Chart -->
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3 class="chart-title">
+                                <i class="fas fa-calendar-alt"></i>
+                                Shopping Frequency
+                            </h3>
+                            <span class="chart-badge">N = 154</span>
+                        </div>
+                        <div class="chart-container chart-container-doughnut">
+                            <canvas id="shoppingFrequencyChart"></canvas>
+                        </div>
+                        <div class="chart-insight">
+                            <i class="fas fa-lightbulb"></i>
+                            <p><strong>78%</strong> of respondents shop at least once per quarter, indicating relatively frequent retail engagement.</p>
+                        </div>
+                    </div>
+
+                    <!-- Shopping Motivation Chart -->
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3 class="chart-title">
+                                <i class="fas fa-heart"></i>
+                                Shopping Motivations
+                            </h3>
+                            <span class="chart-badge">Top Reasons</span>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="shoppingMotivationChart"></canvas>
+                        </div>
+                        <div class="chart-insight">
+                            <i class="fas fa-lightbulb"></i>
+                            <p><strong>"Variety in life"</strong> is the dominant motivation (45.5%), followed by <strong>"keeping up with trends"</strong> (24.7%).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Store Importance Rankings -->
+            <div class="eda-subsection">
+                <h3 class="subsection-title"><i class="fas fa-star"></i> Store Attribute Importance Rankings</h3>
+                <p class="subsection-description">Mean importance ratings on a 5-point Likert scale (1 = Not at all important, 5 = Extremely important)</p>
+                
+                <div class="chart-card chart-card-wide">
+                    <div class="chart-header">
+                        <h3 class="chart-title">
+                            <i class="fas fa-list-ol"></i>
+                            Store Attributes Ranked by Mean Importance
+                        </h3>
+                        <span class="chart-badge success">16 Attributes</span>
+                    </div>
+                    <div class="chart-container" style="height: 450px;">
+                        <canvas id="storeImportanceChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Top 5 Attributes Highlight -->
+                <div class="top-attributes-grid">
+                    <div class="top-attribute-card" style="border-left-color: var(--leaf-green);">
+                        <div class="top-rank">#1</div>
+                        <div class="top-content">
+                            <h4>Store Cleanliness</h4>
+                            <div class="top-score">4.68 <span>/5.0</span></div>
+                            <p>Highest rated attribute with lowest variance (σ=0.61)</p>
+                        </div>
+                    </div>
+                    <div class="top-attribute-card" style="border-left-color: var(--electric-blue);">
+                        <div class="top-rank">#2</div>
+                        <div class="top-content">
+                            <h4>Parking Facility</h4>
+                            <div class="top-score">4.60 <span>/5.0</span></div>
+                            <p>Essential infrastructure requirement for shoppers</p>
+                        </div>
+                    </div>
+                    <div class="top-attribute-card" style="border-left-color: var(--citrus-pop);">
+                        <div class="top-rank">#3</div>
+                        <div class="top-content">
+                            <h4>Digital Payment</h4>
+                            <div class="top-score">4.57 <span>/5.0</span></div>
+                            <p>Reflects modern payment preferences</p>
+                        </div>
+                    </div>
+                    <div class="top-attribute-card" style="border-left-color: var(--purple-splash);">
+                        <div class="top-rank">#4</div>
+                        <div class="top-content">
+                            <h4>Fast Checkout</h4>
+                            <div class="top-score">4.45 <span>/5.0</span></div>
+                            <p>Time efficiency is highly valued</p>
+                        </div>
+                    </div>
+                    <div class="top-attribute-card" style="border-left-color: var(--peach-pop);">
+                        <div class="top-rank">#5</div>
+                        <div class="top-content">
+                            <h4>Return Policy</h4>
+                            <div class="top-score">4.36 <span>/5.0</span></div>
+                            <p>Risk reduction drives confidence</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visual Merchandising Impact -->
+            <div class="eda-subsection">
+                <h3 class="subsection-title"><i class="fas fa-paint-brush"></i> Visual Merchandising Impact</h3>
+                <p class="subsection-description">Agreement ratings on a 5-point Likert scale (1 = Strongly Disagree, 5 = Strongly Agree)</p>
+                
+                <div class="chart-card chart-card-wide">
+                    <div class="chart-header">
+                        <h3 class="chart-title">
+                            <i class="fas fa-chart-bar"></i>
+                            Visual Merchandising Elements Effectiveness
+                        </h3>
+                        <span class="chart-badge">7 Elements</span>
+                    </div>
+                    <div class="chart-container" style="height: 320px;">
+                        <canvas id="vmImpactChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- VM Insights -->
+                <div class="vm-insights-grid">
+                    <div class="vm-insight-card">
+                        <div class="vm-insight-icon" style="background: linear-gradient(135deg, var(--leaf-green), var(--teal-male));">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h4>In-Store Lighting & Music</h4>
+                        <div class="vm-score">Mean: 4.09</div>
+                        <p>Most effective VM element for enhancing shopping experience</p>
+                    </div>
+                    <div class="vm-insight-card">
+                        <div class="vm-insight-icon" style="background: linear-gradient(135deg, var(--purple-splash), var(--electric-blue));">
+                            <i class="fas fa-vr-cardboard"></i>
+                        </div>
+                        <h4>AI/VR/AR Technology</h4>
+                        <div class="vm-score">Mean: 3.90</div>
+                        <p>Growing acceptance of tech-enhanced shopping experiences</p>
+                    </div>
+                    <div class="vm-insight-card">
+                        <div class="vm-insight-icon" style="background: linear-gradient(135deg, var(--citrus-pop), var(--peach-pop));">
+                            <i class="fas fa-tags"></i>
+                        </div>
+                        <h4>Creative In-Store Display</h4>
+                        <div class="vm-score">Mean: 3.78</div>
+                        <p>Promotes impulse buying behavior among consumers</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Attribute Ranking Chart -->
+            <div class="chart-card chart-card-wide chart-animate" style="margin-top: 2rem;">
+                <div class="chart-header">
+                    <h3 class="chart-title">
+                        <i class="fas fa-trophy"></i>
+                        Top 10 Store Attributes by Importance Ranking
+                    </h3>
+                    <span class="chart-badge">with 95% CI</span>
+                </div>
+                <div class="chart-container" style="height: 400px;">
+                    <canvas id="attributeRankingChart"></canvas>
+                </div>
+                <div class="chart-insight">
+                    <i class="fas fa-lightbulb"></i>
+                    <p>Hygiene and operational excellence factors dominate: <strong>Store Cleanliness (#1)</strong>, <strong>Parking (#2)</strong>, and <strong>Digital Payment (#3)</strong> are the most valued attributes.</p>
+                </div>
+            </div>
+
+            <!-- EDA Summary -->
+            <div class="eda-summary-card">
+                <h3><i class="fas fa-clipboard-list"></i> Key EDA Findings</h3>
+                <div class="eda-summary-grid">
+                    <div class="eda-summary-item">
+                        <div class="summary-icon"><i class="fas fa-check-circle"></i></div>
+                        <div class="summary-content">
+                            <h4>Hygiene & Convenience Dominate</h4>
+                            <p>Top 5 attributes relate to cleanliness, parking, payments, checkout speed, and return policies—all operational excellence factors.</p>
+                        </div>
+                    </div>
+                    <div class="eda-summary-item">
+                        <div class="summary-icon"><i class="fas fa-check-circle"></i></div>
+                        <div class="summary-content">
+                            <h4>Price Sensitivity Moderate</h4>
+                            <p>Price-related attributes (offers, vouchers, branded merchandise) rank lowest (mean ~3.0), suggesting value-seeking is less critical than experience.</p>
+                        </div>
+                    </div>
+                    <div class="eda-summary-item">
+                        <div class="summary-icon"><i class="fas fa-check-circle"></i></div>
+                        <div class="summary-content">
+                            <h4>Sensory Experience Matters</h4>
+                            <p>Lighting & music rate highest among VM elements, highlighting the importance of creating an immersive sensory shopping environment.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="validation" class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Reliability</span>
+                <h2 class="section-title">Scale Validation</h2>
+                <p class="section-description">
+                    Ensuring measurement quality through rigorous reliability and validity testing
+                </p>
+            </div>
+
+            <!-- Cronbach's Alpha Section -->
+            <div class="validation-subsection">
+                <h3 class="subsection-title"><i class="fas fa-check-double"></i> Cronbach's Alpha - Internal Consistency</h3>
+                
+                <div class="alpha-cards-grid">
+                    <div class="alpha-card">
+                        <div class="alpha-header">
+                            <span class="alpha-label">Full Scale (23 items)</span>
+                            <span class="alpha-badge alpha-good">Good</span>
+                        </div>
+                        <div class="alpha-value">α = 0.799</div>
+                        <div class="alpha-bar">
+                            <div class="alpha-fill" style="width: 79.9%;"></div>
+                        </div>
+                        <div class="alpha-interpretation">
+                            <i class="fas fa-info-circle"></i>
+                            Acceptable internal consistency for combined scale
+                        </div>
+                    </div>
+                    
+                    <div class="alpha-card">
+                        <div class="alpha-header">
+                            <span class="alpha-label">Store Importance (16 items)</span>
+                            <span class="alpha-badge alpha-good">Acceptable</span>
+                        </div>
+                        <div class="alpha-value">α = 0.780</div>
+                        <div class="alpha-bar">
+                            <div class="alpha-fill" style="width: 78%;"></div>
+                        </div>
+                        <div class="alpha-interpretation">
+                            <i class="fas fa-info-circle"></i>
+                            Good reliability for store attribute scale
+                        </div>
+                    </div>
+                    
+                    <div class="alpha-card">
+                        <div class="alpha-header">
+                            <span class="alpha-label">Visual Merchandising (7 items)</span>
+                            <span class="alpha-badge alpha-acceptable">Questionable</span>
+                        </div>
+                        <div class="alpha-value">α = 0.684</div>
+                        <div class="alpha-bar">
+                            <div class="alpha-fill alpha-fill-yellow" style="width: 68.4%;"></div>
+                        </div>
+                        <div class="alpha-interpretation">
+                            <i class="fas fa-info-circle"></i>
+                            Acceptable for exploratory research
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Alpha Interpretation Guide -->
+                <div class="interpretation-guide">
+                    <h4><i class="fas fa-book-open"></i> Interpretation Guide</h4>
+                    <div class="guide-items">
+                        <div class="guide-item"><span class="guide-badge excellent">α ≥ 0.90</span> Excellent</div>
+                        <div class="guide-item"><span class="guide-badge good">α ≥ 0.80</span> Good</div>
+                        <div class="guide-item"><span class="guide-badge acceptable">α ≥ 0.70</span> Acceptable</div>
+                        <div class="guide-item"><span class="guide-badge questionable">α ≥ 0.60</span> Questionable</div>
+                        <div class="guide-item"><span class="guide-badge poor">α < 0.60</span> Poor</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- KMO & Bartlett's Test -->
+            <div class="validation-subsection">
+                <h3 class="subsection-title"><i class="fas fa-microscope"></i> KMO & Bartlett's Test</h3>
+                <p class="subsection-description">Testing prerequisites for factor analysis</p>
+
+                <div class="charts-grid charts-grid-2x2" style="grid-template-columns: 1fr 1fr;">
+                    <!-- KMO Chart -->
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3 class="chart-title">
+                                <i class="fas fa-bullseye"></i>
+                                Kaiser-Meyer-Olkin (KMO) Measure
+                            </h3>
+                        </div>
+                        <div class="chart-container" style="height: 250px;">
+                            <canvas id="kmoChart"></canvas>
+                        </div>
+                        <div class="chart-insight">
+                            <i class="fas fa-lightbulb"></i>
+                            <p>All scales exceed the <strong>0.60 threshold</strong> for factor analysis suitability.</p>
+                        </div>
+                    </div>
+
+                    <!-- Bartlett's Test Results -->
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3 class="chart-title">
+                                <i class="fas fa-flask"></i>
+                                Bartlett's Test of Sphericity
+                            </h3>
+                        </div>
+                        <div class="bartlett-results">
+                            <div class="bartlett-item">
+                                <span class="bartlett-scale">Store Importance</span>
+                                <div class="bartlett-stats">
+                                    <span class="bartlett-chi">χ² = 681.89</span>
+                                    <span class="bartlett-df">df = 120</span>
+                                    <span class="bartlett-p significant">p < 0.001 ✓</span>
+                                </div>
+                            </div>
+                            <div class="bartlett-item">
+                                <span class="bartlett-scale">Visual Merchandising</span>
+                                <div class="bartlett-stats">
+                                    <span class="bartlett-chi">χ² = 169.47</span>
+                                    <span class="bartlett-df">df = 21</span>
+                                    <span class="bartlett-p significant">p < 0.001 ✓</span>
+                                </div>
+                            </div>
+                            <div class="bartlett-item">
+                                <span class="bartlett-scale">Full Scale</span>
+                                <div class="bartlett-stats">
+                                    <span class="bartlett-chi">χ² = 1049.86</span>
+                                    <span class="bartlett-df">df = 253</span>
+                                    <span class="bartlett-p significant">p < 0.001 ✓</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chart-insight">
+                            <i class="fas fa-lightbulb"></i>
+                            <p>All tests significant (p < 0.001), confirming <strong>correlations exist</strong> in the data.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Split-Half Reliability -->
+            <div class="validation-subsection">
+                <h3 class="subsection-title"><i class="fas fa-columns"></i> Split-Half Reliability</h3>
+                
+                <div class="split-half-table">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Scale</th>
+                                <th>r (Odd-Even)</th>
+                                <th>Spearman-Brown</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Store Importance (16 items)</td>
+                                <td class="value-cell">0.723</td>
+                                <td class="value-cell significant">0.839</td>
+                                <td><span class="table-badge excellent">✓ Reliable</span></td>
+                            </tr>
+                            <tr>
+                                <td>Visual Merchandising (7 items)</td>
+                                <td class="value-cell">0.639</td>
+                                <td class="value-cell significant">0.780</td>
+                                <td><span class="table-badge good">✓ Reliable</span></td>
+                            </tr>
+                            <tr>
+                                <td>Full Scale (23 items)</td>
+                                <td class="value-cell">0.784</td>
+                                <td class="value-cell significant">0.879</td>
+                                <td><span class="table-badge excellent">✓ Reliable</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Validation Summary -->
+            <div class="validation-summary-card">
+                <h3><i class="fas fa-award"></i> Validation Summary</h3>
+                <div class="validation-summary-grid">
+                    <div class="validation-summary-item success">
+                        <div class="vs-icon"><i class="fas fa-check-circle"></i></div>
+                        <div class="vs-content">
+                            <h4>Internal Consistency</h4>
+                            <p>All scales meet minimum reliability thresholds (α ≥ 0.68)</p>
+                        </div>
+                    </div>
+                    <div class="validation-summary-item success">
+                        <div class="vs-icon"><i class="fas fa-check-circle"></i></div>
+                        <div class="vs-content">
+                            <h4>Sampling Adequacy</h4>
+                            <p>KMO values indicate adequate sampling for factor analysis</p>
+                        </div>
+                    </div>
+                    <div class="validation-summary-item success">
+                        <div class="vs-icon"><i class="fas fa-check-circle"></i></div>
+                        <div class="vs-content">
+                            <h4>Correlation Structure</h4>
+                            <p>Bartlett's tests confirm significant inter-item correlations</p>
+                        </div>
+                    </div>
+                    <div class="validation-summary-item success">
+                        <div class="vs-icon"><i class="fas fa-check-circle"></i></div>
+                        <div class="vs-content">
+                            <h4>Ready for EFA</h4>
+                            <p>All prerequisites met for Exploratory Factor Analysis</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="factor-analysis" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Dimensionality</span>
+                <h2 class="section-title">Factor Analysis</h2>
+                <p class="section-description">
+                    Uncovering the underlying structure of consumer preferences through Exploratory Factor Analysis
+                </p>
+            </div>
+
+            <!-- Factor Analysis Overview -->
+            <div class="fa-overview-grid">
+                <div class="fa-overview-card">
+                    <div class="fa-overview-icon" style="background: linear-gradient(135deg, var(--electric-blue), var(--teal-male));">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <div class="fa-overview-content">
+                        <h4>Store Importance</h4>
+                        <div class="fa-overview-stat">3 Factors</div>
+                        <p>47.4% variance explained</p>
+                    </div>
+                </div>
+                <div class="fa-overview-card">
+                    <div class="fa-overview-icon" style="background: linear-gradient(135deg, var(--purple-splash), var(--peach-pop));">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <div class="fa-overview-content">
+                        <h4>Visual Merchandising</h4>
+                        <div class="fa-overview-stat">2 Factors</div>
+                        <p>54.8% variance explained</p>
+                    </div>
+                </div>
+                <div class="fa-overview-card">
+                    <div class="fa-overview-icon" style="background: linear-gradient(135deg, var(--leaf-green), var(--citrus-pop));">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <div class="fa-overview-content">
+                        <h4>Rotation Method</h4>
+                        <div class="fa-overview-stat">Promax</div>
+                        <p>Oblique rotation allowing correlations</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scree Plot Section -->
+            <div class="scree-plot-section">
+                <h3 class="subsection-title"><i class="fas fa-chart-line"></i> Factor Determination: Scree Plot & Parallel Analysis</h3>
+                <div class="scree-grid">
+                    <div class="scree-chart-container chart-animate">
+                        <canvas id="screePlotChart"></canvas>
+                    </div>
+                    <div class="scree-explanation">
+                        <div class="scree-criteria">
+                            <div class="criterion-item">
+                                <div class="criterion-icon"><i class="fas fa-check-circle"></i></div>
+                                <div class="criterion-content">
+                                    <h5>Kaiser Criterion (Eigenvalue > 1)</h5>
+                                    <p>Store Importance: 5 factors (λ > 1)<br>Visual Merchandising: 2 factors retained</p>
+                                </div>
+                            </div>
+                            <div class="criterion-item">
+                                <div class="criterion-icon"><i class="fas fa-check-circle"></i></div>
+                                <div class="criterion-content">
+                                    <h5>Parallel Analysis (Horn's Method)</h5>
+                                    <p>Store Importance: 3 factors<br>More rigorous threshold than Kaiser</p>
+                                </div>
+                            </div>
+                            <div class="criterion-item">
+                                <div class="criterion-icon"><i class="fas fa-check-circle"></i></div>
+                                <div class="criterion-content">
+                                    <h5>Cumulative Variance</h5>
+                                    <p>Store: 62.46% (5 factors)<br>VM: 54.8% (2 factors)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Factor Correlations Heatmap -->
+            <div class="correlation-section" style="margin-top: 2rem;">
+                <h3 class="subsection-title"><i class="fas fa-th"></i> Factor Inter-Correlations</h3>
+                <p class="subsection-description">Promax rotation allows factors to correlate. Low-to-moderate correlations support discriminant validity.</p>
+                <div class="charts-grid" style="grid-template-columns: 1fr 1fr; gap: 2rem;">
+                    <div class="chart-card chart-animate">
+                        <div class="chart-header">
+                            <h3 class="chart-title">
+                                <i class="fas fa-project-diagram"></i>
+                                Factor Correlation Matrix
+                            </h3>
+                        </div>
+                        <div class="chart-container" style="height: 320px;">
+                            <canvas id="correlationHeatmap"></canvas>
+                        </div>
+                        <div class="chart-insight">
+                            <i class="fas fa-lightbulb"></i>
+                            <p>Strongest correlation: F4 (External) ↔ F5 (In-Store) at <strong>φ = 0.157</strong>, confirming VM dimensions are related but distinct.</p>
+                        </div>
+                    </div>
+                    <div class="correlation-interpretation">
+                        <h4><i class="fas fa-key"></i> Key Correlations (CFA Results)</h4>
+                        <div class="correlation-list">
+                            <div class="corr-item corr-high">
+                                <span class="corr-pair">F4 ↔ F5</span>
+                                <span class="corr-value">φ = 0.157***</span>
+                                <span class="corr-label">VM External ↔ In-Store</span>
+                            </div>
+                            <div class="corr-item corr-medium">
+                                <span class="corr-pair">F2 ↔ F4</span>
+                                <span class="corr-value">φ = 0.118*</span>
+                                <span class="corr-label">Atmosphere ↔ VM External</span>
+                            </div>
+                            <div class="corr-item corr-medium">
+                                <span class="corr-pair">F2 ↔ F3</span>
+                                <span class="corr-value">φ = 0.116**</span>
+                                <span class="corr-label">Atmosphere ↔ Value</span>
+                            </div>
+                            <div class="corr-item corr-low">
+                                <span class="corr-pair">F1 ↔ F2</span>
+                                <span class="corr-value">φ = 0.051*</span>
+                                <span class="corr-label">Facilities ↔ Atmosphere</span>
+                            </div>
+                        </div>
+                        <p class="correlation-note"><em>* p < .05, ** p < .01, *** p < .001</em></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Store Importance Factors -->
+            <div class="fa-subsection">
+                <h3 class="subsection-title"><i class="fas fa-store"></i> Store Importance Factors (16 items → 3 factors)</h3>
+                
+                <div class="factors-grid">
+                    <!-- Factor 1: Convenience & Facilities -->
+                    <div class="factor-card factor-1">
+                        <div class="factor-header">
+                            <span class="factor-number">Factor 1</span>
+                            <span class="factor-variance">18.6% variance</span>
+                        </div>
+                        <h4 class="factor-name">Convenience & Facilities</h4>
+                        <p class="factor-description">Service infrastructure and operational convenience elements</p>
+                        <div class="factor-items">
+                            <div class="factor-item"><span class="loading high">0.72</span> Water Facility</div>
+                            <div class="factor-item"><span class="loading high">0.70</span> Washrooms</div>
+                            <div class="factor-item"><span class="loading high">0.61</span> Fast Checkout</div>
+                            <div class="factor-item"><span class="loading high">0.61</span> Changing Rooms</div>
+                            <div class="factor-item"><span class="loading high">0.56</span> Parking</div>
+                            <div class="factor-item"><span class="loading high">0.54</span> Loyalty Program</div>
+                            <div class="factor-item"><span class="loading medium">0.48</span> Store Cleanliness</div>
+                            <div class="factor-item"><span class="loading medium">0.41</span> Digital Payment</div>
+                            <div class="factor-item"><span class="loading medium">0.41</span> Return Policy</div>
+                        </div>
+                    </div>
+
+                    <!-- Factor 2: Store Atmosphere & Aesthetics -->
+                    <div class="factor-card factor-2">
+                        <div class="factor-header">
+                            <span class="factor-number">Factor 2</span>
+                            <span class="factor-variance">16.7% variance</span>
+                        </div>
+                        <h4 class="factor-name">Atmosphere & Aesthetics</h4>
+                        <p class="factor-description">Visual appeal and sensory store environment elements</p>
+                        <div class="factor-items">
+                            <div class="factor-item"><span class="loading high">0.87</span> Merchandise Display</div>
+                            <div class="factor-item"><span class="loading high">0.85</span> Store Ambience</div>
+                            <div class="factor-item"><span class="loading high">0.80</span> Store Design</div>
+                            <div class="factor-item"><span class="loading medium">0.44</span> Store Cleanliness</div>
+                        </div>
+                    </div>
+
+                    <!-- Factor 3: Value & Promotions -->
+                    <div class="factor-card factor-3">
+                        <div class="factor-header">
+                            <span class="factor-number">Factor 3</span>
+                            <span class="factor-variance">12.1% variance</span>
+                        </div>
+                        <h4 class="factor-name">Value & Promotions</h4>
+                        <p class="factor-description">Price-related and value-seeking preferences</p>
+                        <div class="factor-items">
+                            <div class="factor-item"><span class="loading high">0.77</span> Price Offers</div>
+                            <div class="factor-item"><span class="loading high">0.69</span> Vouchers/Coupons</div>
+                            <div class="factor-item"><span class="loading high">0.52</span> Branded Merchandise</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visual Merchandising Factors -->
+            <div class="fa-subsection">
+                <h3 class="subsection-title"><i class="fas fa-palette"></i> Visual Merchandising Factors (7 items → 2 factors)</h3>
+                
+                <div class="factors-grid factors-grid-2">
+                    <!-- VM Factor 1: External Attraction -->
+                    <div class="factor-card factor-vm-1">
+                        <div class="factor-header">
+                            <span class="factor-number">Factor 1</span>
+                            <span class="factor-variance">External</span>
+                        </div>
+                        <h4 class="factor-name">External Attraction</h4>
+                        <p class="factor-description">Elements that draw customers into the store</p>
+                        <div class="factor-items">
+                            <div class="factor-item"><span class="loading high">0.90</span> Window Display</div>
+                            <div class="factor-item"><span class="loading high">0.86</span> Signage & Graphics</div>
+                            <div class="factor-item"><span class="loading high">0.50</span> Entrance Promos</div>
+                        </div>
+                    </div>
+
+                    <!-- VM Factor 2: In-Store Experience -->
+                    <div class="factor-card factor-vm-2">
+                        <div class="factor-header">
+                            <span class="factor-number">Factor 2</span>
+                            <span class="factor-variance">Internal</span>
+                        </div>
+                        <h4 class="factor-name">In-Store Experience</h4>
+                        <p class="factor-description">Elements enhancing the shopping journey inside</p>
+                        <div class="factor-items">
+                            <div class="factor-item"><span class="loading high">0.84</span> Communication Elements</div>
+                            <div class="factor-item"><span class="loading high">0.68</span> Lighting & Music</div>
+                            <div class="factor-item"><span class="loading high">0.65</span> AI/VR/AR Technology</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Factor Analysis Summary -->
+            <div class="fa-summary-card">
+                <h3><i class="fas fa-sitemap"></i> Factor Structure Summary</h3>
+                <div class="fa-summary-visual">
+                    <div class="fa-construct">
+                        <div class="construct-header">Store Importance Scale</div>
+                        <div class="construct-factors">
+                            <div class="construct-factor f1">
+                                <span class="cf-name">Convenience & Facilities</span>
+                                <span class="cf-items">9 items</span>
+                            </div>
+                            <div class="construct-factor f2">
+                                <span class="cf-name">Atmosphere & Aesthetics</span>
+                                <span class="cf-items">4 items</span>
+                            </div>
+                            <div class="construct-factor f3">
+                                <span class="cf-name">Value & Promotions</span>
+                                <span class="cf-items">3 items</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fa-construct">
+                        <div class="construct-header">Visual Merchandising Scale</div>
+                        <div class="construct-factors">
+                            <div class="construct-factor vm1">
+                                <span class="cf-name">External Attraction</span>
+                                <span class="cf-items">3 items</span>
+                            </div>
+                            <div class="construct-factor vm2">
+                                <span class="cf-name">In-Store Experience</span>
+                                <span class="cf-items">4 items</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fa-key-insight">
+                    <i class="fas fa-lightbulb"></i>
+                    <p><strong>Key Insight:</strong> The factor structure reveals that consumers evaluate retail stores on three distinct dimensions: 
+                    operational convenience, aesthetic appeal, and value for money. This multidimensional view should inform targeted retail strategies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="inferential" class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Hypothesis Testing</span>
+                <h2 class="section-title">Inferential Statistics</h2>
+                <p class="section-description">
+                    Testing differences across demographic groups using t-tests, ANOVA, and Chi-square analyses
+                </p>
+            </div>
+
+            <!-- Key Findings Summary -->
+            <div class="inf-findings-banner">
+                <div class="inf-finding significant">
+                    <i class="fas fa-check-circle"></i>
+                    <div class="inf-finding-content">
+                        <h4>2 Significant ANOVAs</h4>
+                        <p>Occupation affects Store Atmosphere & VM External Appeal</p>
+                    </div>
+                </div>
+                <div class="inf-finding significant">
+                    <i class="fas fa-check-circle"></i>
+                    <div class="inf-finding-content">
+                        <h4>3 Significant χ² Tests</h4>
+                        <p>Age & Occupation relate to shopping behaviors</p>
+                    </div>
+                </div>
+                <div class="inf-finding not-significant">
+                    <i class="fas fa-times-circle"></i>
+                    <div class="inf-finding-content">
+                        <h4>No Gender Effects</h4>
+                        <p>Males & females show similar preferences</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- T-Tests: Gender Differences -->
+            <div class="inf-subsection">
+                <h3 class="subsection-title"><i class="fas fa-venus-mars"></i> Independent Samples t-Tests: Gender Differences</h3>
+                <p class="subsection-description">Comparing factor scores between male (n=58) and female (n=96) respondents</p>
+                
+                <div class="ttest-results-card">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Factor</th>
+                                <th>Male (M)</th>
+                                <th>Female (M)</th>
+                                <th>t-statistic</th>
+                                <th>p-value</th>
+                                <th>Cohen's d</th>
+                                <th>Result</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Facilities & Service</td>
+                                <td class="value-cell">-0.17</td>
+                                <td class="value-cell">+0.10</td>
+                                <td class="value-cell">-1.65</td>
+                                <td class="value-cell not-significant">0.102</td>
+                                <td class="value-cell">-0.27</td>
+                                <td><span class="result-badge ns">Not Sig.</span></td>
+                            </tr>
+                            <tr>
+                                <td>Store Atmosphere</td>
+                                <td class="value-cell">-0.15</td>
+                                <td class="value-cell">+0.09</td>
+                                <td class="value-cell">-1.46</td>
+                                <td class="value-cell not-significant">0.148</td>
+                                <td class="value-cell">-0.24</td>
+                                <td><span class="result-badge ns">Not Sig.</span></td>
+                            </tr>
+                            <tr>
+                                <td>Value Proposition</td>
+                                <td class="value-cell">+0.10</td>
+                                <td class="value-cell">-0.06</td>
+                                <td class="value-cell">0.94</td>
+                                <td class="value-cell not-significant">0.347</td>
+                                <td class="value-cell">0.16</td>
+                                <td><span class="result-badge ns">Not Sig.</span></td>
+                            </tr>
+                            <tr>
+                                <td>VM - External Appeal</td>
+                                <td class="value-cell">-0.00</td>
+                                <td class="value-cell">+0.00</td>
+                                <td class="value-cell">-0.01</td>
+                                <td class="value-cell not-significant">0.992</td>
+                                <td class="value-cell">-0.00</td>
+                                <td><span class="result-badge ns">Not Sig.</span></td>
+                            </tr>
+                            <tr>
+                                <td>VM - In-Store Experience</td>
+                                <td class="value-cell">+0.00</td>
+                                <td class="value-cell">-0.00</td>
+                                <td class="value-cell">0.04</td>
+                                <td class="value-cell not-significant">0.968</td>
+                                <td class="value-cell">0.01</td>
+                                <td><span class="result-badge ns">Not Sig.</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="table-insight">
+                        <i class="fas fa-info-circle"></i>
+                        <p><strong>Conclusion:</strong> No significant gender differences found across all five factors. Males and females have similar retail preferences.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ANOVA: Occupation Differences -->
+            <div class="inf-subsection">
+                <h3 class="subsection-title"><i class="fas fa-briefcase"></i> One-Way ANOVA: Occupation Differences</h3>
+                <p class="subsection-description">Comparing factor scores across occupation groups (Employed, Student, Business, Housewife)</p>
+                
+                <div class="anova-results-grid">
+                    <div class="anova-card significant">
+                        <div class="anova-header">
+                            <span class="anova-factor">Store Atmosphere</span>
+                            <span class="anova-badge sig">Significant</span>
+                        </div>
+                        <div class="anova-stats">
+                            <div class="anova-stat">
+                                <span class="stat-label">F-statistic</span>
+                                <span class="stat-value">2.93</span>
+                            </div>
+                            <div class="anova-stat">
+                                <span class="stat-label">p-value</span>
+                                <span class="stat-value highlight">0.036*</span>
+                            </div>
+                            <div class="anova-stat">
+                                <span class="stat-label">η² (Effect)</span>
+                                <span class="stat-value">0.055</span>
+                            </div>
+                        </div>
+                        <div class="anova-insight">
+                            <p>Business owners show different aesthetic preferences than other groups</p>
+                        </div>
+                    </div>
+
+                    <div class="anova-card significant">
+                        <div class="anova-header">
+                            <span class="anova-factor">VM - External Appeal</span>
+                            <span class="anova-badge sig">Significant</span>
+                        </div>
+                        <div class="anova-stats">
+                            <div class="anova-stat">
+                                <span class="stat-label">F-statistic</span>
+                                <span class="stat-value">2.93</span>
+                            </div>
+                            <div class="anova-stat">
+                                <span class="stat-label">p-value</span>
+                                <span class="stat-value highlight">0.036*</span>
+                            </div>
+                            <div class="anova-stat">
+                                <span class="stat-label">η² (Effect)</span>
+                                <span class="stat-value">0.055</span>
+                            </div>
+                        </div>
+                        <div class="anova-insight">
+                            <p>Post-hoc: Business vs Student (p = 0.022)</p>
+                        </div>
+                    </div>
+
+                    <div class="anova-card">
+                        <div class="anova-header">
+                            <span class="anova-factor">Other Factors</span>
+                            <span class="anova-badge ns">Not Significant</span>
+                        </div>
+                        <div class="anova-detail">
+                            <p>Facilities & Service (p = 0.258), Value Proposition (p = 0.689), and VM In-Store Experience (p = 0.053) showed no significant occupation differences.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chi-Square Tests -->
+            <div class="inf-subsection">
+                <h3 class="subsection-title"><i class="fas fa-th"></i> Chi-Square Tests: Categorical Associations</h3>
+                
+                <div class="chisq-results-card">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Variables</th>
+                                <th>χ²</th>
+                                <th>df</th>
+                                <th>p-value</th>
+                                <th>Cramér's V</th>
+                                <th>Result</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="highlight-row">
+                                <td>Age × Shopping Reason</td>
+                                <td class="value-cell">30.84</td>
+                                <td class="value-cell">12</td>
+                                <td class="value-cell significant">0.002**</td>
+                                <td class="value-cell">0.26</td>
+                                <td><span class="result-badge sig">Significant</span></td>
+                            </tr>
+                            <tr class="highlight-row">
+                                <td>Age × Shopping Frequency</td>
+                                <td class="value-cell">22.96</td>
+                                <td class="value-cell">9</td>
+                                <td class="value-cell significant">0.006**</td>
+                                <td class="value-cell">0.22</td>
+                                <td><span class="result-badge sig">Significant</span></td>
+                            </tr>
+                            <tr class="highlight-row">
+                                <td>Occupation × Shopping Reason</td>
+                                <td class="value-cell">22.94</td>
+                                <td class="value-cell">12</td>
+                                <td class="value-cell significant">0.028*</td>
+                                <td class="value-cell">0.23</td>
+                                <td><span class="result-badge sig">Significant</span></td>
+                            </tr>
+                            <tr>
+                                <td>Gender × Shopping Reason</td>
+                                <td class="value-cell">1.24</td>
+                                <td class="value-cell">4</td>
+                                <td class="value-cell not-significant">0.872</td>
+                                <td class="value-cell">0.09</td>
+                                <td><span class="result-badge ns">Not Sig.</span></td>
+                            </tr>
+                            <tr>
+                                <td>Gender × Shopping Frequency</td>
+                                <td class="value-cell">2.64</td>
+                                <td class="value-cell">3</td>
+                                <td class="value-cell not-significant">0.451</td>
+                                <td class="value-cell">0.13</td>
+                                <td><span class="result-badge ns">Not Sig.</span></td>
+                            </tr>
+                            <tr>
+                                <td>Education × Shopping Frequency</td>
+                                <td class="value-cell">9.95</td>
+                                <td class="value-cell">6</td>
+                                <td class="value-cell not-significant">0.127</td>
+                                <td class="value-cell">0.18</td>
+                                <td><span class="result-badge ns">Not Sig.</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Effect Sizes Visualization -->
+            <div class="inf-subsection">
+                <h3 class="subsection-title"><i class="fas fa-ruler"></i> Effect Size Visualization</h3>
+                <p class="subsection-description">Comparing effect sizes across different statistical tests</p>
+                
+                <div class="charts-row">
+                    <div class="chart-wrapper medium chart-animate" data-chart-id="effectSizeChart">
+                        <h4 class="chart-title">Cohen's d Effect Sizes (Gender t-Tests)</h4>
+                        <canvas id="effectSizeChart"></canvas>
+                        <p class="chart-note">Values near 0 indicate no practical difference</p>
+                    </div>
+                    <div class="chart-wrapper medium chart-animate" data-chart-id="anovaEffectChart">
+                        <h4 class="chart-title">ANOVA Effect Sizes (η²) by Factor</h4>
+                        <canvas id="anovaEffectChart"></canvas>
+                        <p class="chart-note">η² ≥ 0.01 (small), ≥ 0.06 (medium), ≥ 0.14 (large)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Inferential Summary -->
+            <div class="inf-summary-card">
+                <h3><i class="fas fa-clipboard-check"></i> Key Inferential Findings</h3>
+                <div class="inf-summary-grid">
+                    <div class="inf-summary-item">
+                        <div class="inf-summary-icon green"><i class="fas fa-users"></i></div>
+                        <div class="inf-summary-content">
+                            <h4>Age Matters for Behavior</h4>
+                            <p>Different age groups have distinct shopping motivations and frequencies. Young adults (18-25) shop more for variety, while older groups focus on trends.</p>
+                        </div>
+                    </div>
+                    <div class="inf-summary-item">
+                        <div class="inf-summary-icon blue"><i class="fas fa-briefcase"></i></div>
+                        <div class="inf-summary-content">
+                            <h4>Occupation Influences Aesthetics</h4>
+                            <p>Business owners value store atmosphere and external visual merchandising significantly differently than students.</p>
+                        </div>
+                    </div>
+                    <div class="inf-summary-item">
+                        <div class="inf-summary-icon purple"><i class="fas fa-venus-mars"></i></div>
+                        <div class="inf-summary-content">
+                            <h4>Gender-Neutral Preferences</h4>
+                            <p>No significant gender differences across any factor or shopping behavior—suggesting universal appeal strategies work equally well.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="regression" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Relationships</span>
+                <h2 class="section-title">Path Analysis & Regression</h2>
+                <p class="section-description">
+                    Examining how store importance factors predict visual merchandising perceptions
+                </p>
+            </div>
+
+            <!-- Path Model Diagram -->
+            <div class="path-model-container">
+                <h3 class="subsection-title"><i class="fas fa-project-diagram"></i> Theoretical Path Model</h3>
+                <div class="path-diagram">
+                    <div class="path-predictors">
+                        <div class="path-box predictor-box">
+                            <span class="path-label">F1: Facilities & Service</span>
+                        </div>
+                        <div class="path-box predictor-box">
+                            <span class="path-label">F2: Store Atmosphere</span>
+                        </div>
+                        <div class="path-box predictor-box highlight-box">
+                            <span class="path-label">F3: Value Proposition</span>
+                            <span class="sig-badge">Significant Predictor</span>
+                        </div>
+                    </div>
+                    <div class="path-arrows">
+                        <div class="arrow-group">
+                            <div class="arrow-line"></div>
+                            <div class="arrow-line highlight-arrow"></div>
+                            <div class="arrow-line highlight-arrow"></div>
+                        </div>
+                    </div>
+                    <div class="path-outcomes">
+                        <div class="path-box outcome-box">
+                            <span class="path-label">VM - External Appeal</span>
+                            <span class="r2-badge">R² = 9.1%</span>
+                        </div>
+                        <div class="path-box outcome-box">
+                            <span class="path-label">VM - In-Store Experience</span>
+                            <span class="r2-badge">R² = 7.1%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Regression Models -->
+            <div class="regression-models-grid">
+                <!-- Model 1 -->
+                <div class="regression-card">
+                    <div class="regression-header">
+                        <h4><i class="fas fa-chart-line"></i> Model 1: VM External Appeal</h4>
+                        <div class="model-fit">
+                            <span class="fit-stat">R² = 0.091</span>
+                            <span class="fit-stat">F(3,150) = 4.996</span>
+                            <span class="fit-stat sig">p = 0.003**</span>
+                        </div>
+                    </div>
+                    <div class="regression-table-container">
+                        <table class="regression-table">
+                            <thead>
+                                <tr>
+                                    <th>Predictor</th>
+                                    <th>β</th>
+                                    <th>SE</th>
+                                    <th>z</th>
+                                    <th>p-value</th>
+                                    <th>Sig</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>F1: Facilities & Service</td>
+                                    <td>0.085</td>
+                                    <td>0.081</td>
+                                    <td>1.05</td>
+                                    <td>0.293</td>
+                                    <td><span class="sig-ns">ns</span></td>
+                                </tr>
+                                <tr>
+                                    <td>F2: Store Atmosphere</td>
+                                    <td>0.134</td>
+                                    <td>0.081</td>
+                                    <td>1.66</td>
+                                    <td>0.097</td>
+                                    <td><span class="sig-ns">ns</span></td>
+                                </tr>
+                                <tr class="highlight-row">
+                                    <td>F3: Value Proposition</td>
+                                    <td>0.218</td>
+                                    <td>0.078</td>
+                                    <td>2.80</td>
+                                    <td>0.005</td>
+                                    <td><span class="sig-yes">**</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Model 2 -->
+                <div class="regression-card">
+                    <div class="regression-header">
+                        <h4><i class="fas fa-chart-line"></i> Model 2: VM In-Store Experience</h4>
+                        <div class="model-fit">
+                            <span class="fit-stat">R² = 0.071</span>
+                            <span class="fit-stat">F(3,150) = 3.798</span>
+                            <span class="fit-stat sig">p = 0.012*</span>
+                        </div>
+                    </div>
+                    <div class="regression-table-container">
+                        <table class="regression-table">
+                            <thead>
+                                <tr>
+                                    <th>Predictor</th>
+                                    <th>β</th>
+                                    <th>SE</th>
+                                    <th>z</th>
+                                    <th>p-value</th>
+                                    <th>Sig</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>F1: Facilities & Service</td>
+                                    <td>0.033</td>
+                                    <td>0.082</td>
+                                    <td>0.40</td>
+                                    <td>0.689</td>
+                                    <td><span class="sig-ns">ns</span></td>
+                                </tr>
+                                <tr>
+                                    <td>F2: Store Atmosphere</td>
+                                    <td>0.146</td>
+                                    <td>0.082</td>
+                                    <td>1.78</td>
+                                    <td>0.076</td>
+                                    <td><span class="sig-ns">ns</span></td>
+                                </tr>
+                                <tr class="highlight-row">
+                                    <td>F3: Value Proposition</td>
+                                    <td>0.193</td>
+                                    <td>0.079</td>
+                                    <td>2.46</td>
+                                    <td>0.014</td>
+                                    <td><span class="sig-yes">*</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Model Diagnostics -->
+            <div class="diagnostics-container">
+                <h3 class="subsection-title"><i class="fas fa-stethoscope"></i> Model Diagnostics</h3>
+                <div class="diagnostics-grid">
+                    <div class="diagnostic-card">
+                        <div class="diagnostic-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="diagnostic-info">
+                            <h4>Multicollinearity Check</h4>
+                            <p>All VIF values &lt; 1.2</p>
+                            <span class="diagnostic-status pass">No issues detected</span>
+                        </div>
+                    </div>
+                    <div class="diagnostic-card">
+                        <div class="diagnostic-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <div class="diagnostic-info">
+                            <h4>Path Model Fit</h4>
+                            <p>CFI = 1.00, RMSEA = 0.00</p>
+                            <span class="diagnostic-status pass">Excellent fit</span>
+                        </div>
+                    </div>
+                    <div class="diagnostic-card">
+                        <div class="diagnostic-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="diagnostic-info">
+                            <h4>Sample Size</h4>
+                            <p>N = 154 observations</p>
+                            <span class="diagnostic-status pass">Adequate for analysis</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Findings -->
+            <div class="regression-findings">
+                <h3 class="subsection-title"><i class="fas fa-lightbulb"></i> Key Findings</h3>
+                <div class="findings-grid">
+                    <div class="finding-card primary">
+                        <div class="finding-icon"><i class="fas fa-arrow-right"></i></div>
+                        <h4>Value Proposition is Key</h4>
+                        <p>F3 (Value Proposition) is the <strong>only significant predictor</strong> of both VM dimensions. Consumers who value pricing, promotions, and return policies also respond more positively to visual merchandising elements.</p>
+                    </div>
+                    <div class="finding-card">
+                        <div class="finding-icon"><i class="fas fa-percentage"></i></div>
+                        <h4>Modest Effect Sizes</h4>
+                        <p>Store importance factors explain 9.1% of External Appeal variance and 7.1% of In-Store Experience variance. Other unmeasured factors likely contribute to VM perceptions.</p>
+                    </div>
+                    <div class="finding-card">
+                        <div class="finding-icon"><i class="fas fa-link"></i></div>
+                        <h4>Factor Correlations</h4>
+                        <p>Significant correlations exist between Store Atmosphere and both VM factors (φ = 0.12), suggesting overlapping perceptual dimensions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="clustering" class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Segmentation</span>
+                <h2 class="section-title">Consumer Clusters</h2>
+                <p class="section-description">
+                    K-Means clustering identifies two distinct consumer segments with significantly different profiles
+                </p>
+            </div>
+
+            <!-- Cluster Overview -->
+            <div class="cluster-overview">
+                <div class="cluster-stat-card">
+                    <div class="cluster-icon"><i class="fas fa-object-group"></i></div>
+                    <h3>2 Segments</h3>
+                    <p>Optimal cluster solution</p>
+                </div>
+                <div class="cluster-stat-card highlight">
+                    <div class="cluster-icon"><i class="fas fa-check-double"></i></div>
+                    <h3>Hotelling's T² = 266.8</h3>
+                    <p>p &lt; 0.001 (Highly significant)</p>
+                </div>
+                <div class="cluster-stat-card">
+                    <div class="cluster-icon"><i class="fas fa-users"></i></div>
+                    <h3>72 / 82</h3>
+                    <p>Balanced cluster sizes</p>
+                </div>
+            </div>
+
+            <!-- Radar Chart for Cluster Profiles -->
+            <div class="cluster-radar-container">
+                <h3 class="subsection-title"><i class="fas fa-chart-pie"></i> Segment Profile Comparison</h3>
+                <div class="radar-chart-wrapper chart-animate">
+                    <canvas id="clusterRadarChart"></canvas>
+                </div>
+                <div class="radar-insight">
+                    <i class="fas fa-info-circle"></i>
+                    <p>The radar chart visualizes how each segment differs across all five factor dimensions. Value-Seeking Visual Shoppers (green) score consistently above average while Low-Involvement Shoppers (gray) fall below average on all dimensions.</p>
+                </div>
+            </div>
+
+            <!-- Segment Profiles -->
+            <div class="segments-container">
+                <h3 class="subsection-title"><i class="fas fa-user-tag"></i> Segment Profiles</h3>
+                <div class="segments-grid">
+                    <!-- Segment 1: Low-Involvement -->
+                    <div class="segment-card segment-low">
+                        <div class="segment-header">
+                            <span class="segment-number">Segment 1</span>
+                            <h4 class="segment-name">Low-Involvement Shoppers</h4>
+                            <span class="segment-count">n = 72 (46.8%)</span>
+                        </div>
+                        <div class="segment-profile">
+                            <p class="segment-description">
+                                Consumers with below-average scores across all store importance and visual merchandising dimensions. 
+                                They tend to be more utilitarian and less engaged with the shopping environment.
+                            </p>
+                            <div class="profile-bars">
+                                <div class="profile-bar">
+                                    <span class="bar-label">Facilities & Service</span>
+                                    <div class="bar-track"><div class="bar-fill low" style="width: 35%"></div></div>
+                                    <span class="bar-value">Below Avg</span>
+                                </div>
+                                <div class="profile-bar">
+                                    <span class="bar-label">Store Atmosphere</span>
+                                    <div class="bar-track"><div class="bar-fill low" style="width: 30%"></div></div>
+                                    <span class="bar-value">Below Avg</span>
+                                </div>
+                                <div class="profile-bar">
+                                    <span class="bar-label">Value Proposition</span>
+                                    <div class="bar-track"><div class="bar-fill low" style="width: 35%"></div></div>
+                                    <span class="bar-value">Below Avg</span>
+                                </div>
+                                <div class="profile-bar">
+                                    <span class="bar-label">VM External Appeal</span>
+                                    <div class="bar-track"><div class="bar-fill low" style="width: 28%"></div></div>
+                                    <span class="bar-value">Below Avg</span>
+                                </div>
+                                <div class="profile-bar">
+                                    <span class="bar-label">VM In-Store</span>
+                                    <div class="bar-track"><div class="bar-fill low" style="width: 25%"></div></div>
+                                    <span class="bar-value">Below Avg</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Segment 2: Value-Seeking Visual -->
+                    <div class="segment-card segment-high">
+                        <div class="segment-header">
+                            <span class="segment-number">Segment 2</span>
+                            <h4 class="segment-name">Value-Seeking Visual Shoppers</h4>
+                            <span class="segment-count">n = 82 (53.2%)</span>
+                        </div>
+                        <div class="segment-profile">
+                            <p class="segment-description">
+                                Consumers with above-average scores on all dimensions. They are highly engaged with the shopping 
+                                experience and respond strongly to both store attributes and visual merchandising elements.
+                            </p>
+                            <div class="profile-bars">
+                                <div class="profile-bar">
+                                    <span class="bar-label">Facilities & Service</span>
+                                    <div class="bar-track"><div class="bar-fill high" style="width: 75%"></div></div>
+                                    <span class="bar-value">Above Avg</span>
+                                </div>
+                                <div class="profile-bar">
+                                    <span class="bar-label">Store Atmosphere</span>
+                                    <div class="bar-track"><div class="bar-fill high" style="width: 70%"></div></div>
+                                    <span class="bar-value">Above Avg</span>
+                                </div>
+                                <div class="profile-bar">
+                                    <span class="bar-label">Value Proposition</span>
+                                    <div class="bar-track"><div class="bar-fill high" style="width: 85%"></div></div>
+                                    <span class="bar-value">Above Avg</span>
+                                </div>
+                                <div class="profile-bar">
+                                    <span class="bar-label">VM External Appeal</span>
+                                    <div class="bar-track"><div class="bar-fill high" style="width: 80%"></div></div>
+                                    <span class="bar-value">Above Avg</span>
+                                </div>
+                                <div class="profile-bar">
+                                    <span class="bar-label">VM In-Store</span>
+                                    <div class="bar-track"><div class="bar-fill high" style="width: 90%"></div></div>
+                                    <span class="bar-value">Above Avg</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Strategic Cluster Insights -->
+            <div class="cluster-insights-container">
+                <h3 class="subsection-title"><i class="fas fa-lightbulb"></i> Strategic Cluster Insights</h3>
+                <div class="insights-grid">
+                    <div class="insight-card insight-key">
+                        <div class="insight-icon"><i class="fas fa-bullseye"></i></div>
+                        <div class="insight-content">
+                            <h4>Key Finding</h4>
+                            <p>The two segments are distinguished primarily by <strong>engagement intensity</strong>, not by which factors they value. Both segments rank factors in the same order—they simply differ in how strongly they respond to store attributes and visual merchandising.</p>
+                        </div>
+                    </div>
+                    <div class="insight-card">
+                        <div class="insight-icon"><i class="fas fa-chart-bar"></i></div>
+                        <div class="insight-content">
+                            <h4>Strongest Differentiator</h4>
+                            <p><strong>VM In-Store Experience</strong> (d=1.46) shows the largest effect size, indicating Value-Seeking Visual Shoppers are particularly responsive to creative displays, lighting, music, and technology (AI/VR/AR) elements in-store.</p>
+                        </div>
+                    </div>
+                    <div class="insight-card">
+                        <div class="insight-icon"><i class="fas fa-users-cog"></i></div>
+                        <div class="insight-content">
+                            <h4>Demographics Are Not Differentiators</h4>
+                            <p>Chi-square tests reveal <strong>no significant demographic differences</strong> between segments (Gender χ²=0.04, p=0.84; Age χ²=1.17, p=0.76; Occupation χ²=5.33, p=0.15). Both segments share similar profiles: predominantly female, 18-25 years, employed.</p>
+                        </div>
+                    </div>
+                    <div class="insight-card">
+                        <div class="insight-icon"><i class="fas fa-balance-scale"></i></div>
+                        <div class="insight-content">
+                            <h4>Balanced Segments</h4>
+                            <p>The near-equal split (46.8% vs 53.2%) suggests the market is roughly divided between <strong>convenience-focused shoppers</strong> who prioritize efficiency and <strong>experience-seeking shoppers</strong> who engage deeply with the retail environment.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="segment-strategies">
+                    <h4><i class="fas fa-chess"></i> Targeting Strategies</h4>
+                    <div class="strategies-grid">
+                        <div class="strategy-card strategy-low">
+                            <h5><i class="fas fa-running"></i> Low-Involvement Shoppers</h5>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Streamline the shopping journey—fast checkout, clear signage</li>
+                                <li><i class="fas fa-check"></i> Focus on functional attributes: cleanliness, parking, digital payments</li>
+                                <li><i class="fas fa-check"></i> Keep VM simple and informative rather than elaborate</li>
+                                <li><i class="fas fa-check"></i> Emphasize time-saving and convenience in communications</li>
+                            </ul>
+                        </div>
+                        <div class="strategy-card strategy-high">
+                            <h5><i class="fas fa-magic"></i> Value-Seeking Visual Shoppers</h5>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Invest in immersive in-store experiences and creative displays</li>
+                                <li><i class="fas fa-check"></i> Leverage technology (AR/VR, interactive displays) to engage</li>
+                                <li><i class="fas fa-check"></i> Combine value messaging with strong visual merchandising</li>
+                                <li><i class="fas fa-check"></i> Create Instagram-worthy moments to encourage social sharing</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Effect Sizes Table -->
+            <div class="effect-sizes-container">
+                <h3 class="subsection-title"><i class="fas fa-ruler"></i> Cluster Differentiation (Effect Sizes)</h3>
+                <div class="effect-table-container">
+                    <table class="effect-table">
+                        <thead>
+                            <tr>
+                                <th>Factor</th>
+                                <th>F-statistic</th>
+                                <th>p-value</th>
+                                <th>η² (Eta-squared)</th>
+                                <th>Cohen's d</th>
+                                <th>Effect Size</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="effect-large">
+                                <td>VM - In-Store Experience</td>
+                                <td>81.12</td>
+                                <td>&lt;0.001</td>
+                                <td>0.348</td>
+                                <td>1.46</td>
+                                <td><span class="effect-badge large">Large</span></td>
+                            </tr>
+                            <tr class="effect-large">
+                                <td>VM - External Appeal</td>
+                                <td>68.60</td>
+                                <td>&lt;0.001</td>
+                                <td>0.311</td>
+                                <td>1.35</td>
+                                <td><span class="effect-badge large">Large</span></td>
+                            </tr>
+                            <tr class="effect-large">
+                                <td>Value Proposition</td>
+                                <td>36.17</td>
+                                <td>&lt;0.001</td>
+                                <td>0.192</td>
+                                <td>0.98</td>
+                                <td><span class="effect-badge large">Large</span></td>
+                            </tr>
+                            <tr class="effect-large">
+                                <td>Store Atmosphere</td>
+                                <td>34.91</td>
+                                <td>&lt;0.001</td>
+                                <td>0.187</td>
+                                <td>0.96</td>
+                                <td><span class="effect-badge large">Large</span></td>
+                            </tr>
+                            <tr class="effect-medium">
+                                <td>Facilities & Service</td>
+                                <td>20.95</td>
+                                <td>&lt;0.001</td>
+                                <td>0.121</td>
+                                <td>0.74</td>
+                                <td><span class="effect-badge medium">Medium</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- CMB Check -->
+            <div class="cmb-container">
+                <h3 class="subsection-title"><i class="fas fa-shield-alt"></i> Common Method Bias Check</h3>
+                <div class="cmb-card">
+                    <div class="cmb-icon"><i class="fas fa-check-circle"></i></div>
+                    <div class="cmb-content">
+                        <h4>Harman's Single Factor Test: PASSED</h4>
+                        <p>Single factor explains only <strong>18.3%</strong> of variance (threshold: &lt;50%)</p>
+                        <p>5-factor solution explains <strong>51.6%</strong> — confirming distinct constructs exist beyond common method variance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="conclusions" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Summary</span>
+                <h2 class="section-title">Conclusions & Implications</h2>
+                <p class="section-description">
+                    Key findings and strategic recommendations for retail practitioners
+                </p>
+            </div>
+
+            <!-- Key Findings Summary -->
+            <div class="conclusions-summary">
+                <h3 class="subsection-title"><i class="fas fa-trophy"></i> Research Highlights</h3>
+                <div class="highlight-grid">
+                    <div class="highlight-card">
+                        <div class="highlight-number">1</div>
+                        <h4>Validated Measurement</h4>
+                        <p>All scales demonstrate acceptable reliability (α = 0.68–0.80) and the 5-factor structure is confirmed through both EFA and CFA.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-number">2</div>
+                        <h4>Value Drives VM Response</h4>
+                        <p>Value Proposition (pricing, promotions, returns) is the only significant predictor of visual merchandising perceptions.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-number">3</div>
+                        <h4>Two Consumer Segments</h4>
+                        <p>Clear segmentation into "Low-Involvement" and "Value-Seeking Visual" shoppers with large effect sizes (d = 0.74–1.46).</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-number">4</div>
+                        <h4>Occupation Matters</h4>
+                        <p>Significant differences by occupation in Store Atmosphere (p=0.036) and VM External Appeal (p=0.036) perceptions.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- The 5 Factors Explained -->
+            <div class="factors-summary-container">
+                <h3 class="subsection-title"><i class="fas fa-cubes"></i> The 5 Factors Explained</h3>
+                <p class="factors-intro">Factor analysis revealed five distinct dimensions that capture how consumers perceive retail store importance and visual merchandising effectiveness:</p>
+                
+                <div class="factors-explained-grid">
+                    <div class="factor-explained-card store-importance">
+                        <div class="factor-category-badge">Store Importance</div>
+                        <div class="factor-explained-header">
+                            <span class="factor-number">F1</span>
+                            <h4>Facilities & Service</h4>
+                        </div>
+                        <p class="factor-description">Physical amenities and service quality including parking, washrooms, water facility, changing rooms, fast checkout, and store cleanliness.</p>
+                        <div class="factor-stats">
+                            <span class="factor-stat"><strong>6 items</strong></span>
+                            <span class="factor-stat">α = 0.78</span>
+                            <span class="factor-stat">25.1% variance</span>
+                        </div>
+                    </div>
+                    
+                    <div class="factor-explained-card store-importance">
+                        <div class="factor-category-badge">Store Importance</div>
+                        <div class="factor-explained-header">
+                            <span class="factor-number">F2</span>
+                            <h4>Store Atmosphere</h4>
+                        </div>
+                        <p class="factor-description">Aesthetic and sensory elements including store design/layout, merchandise display arrangement, and overall store ambience.</p>
+                        <div class="factor-stats">
+                            <span class="factor-stat"><strong>3 items</strong></span>
+                            <span class="factor-stat">α = 0.80</span>
+                            <span class="factor-stat">12.8% variance</span>
+                        </div>
+                    </div>
+                    
+                    <div class="factor-explained-card store-importance highlight-factor">
+                        <div class="factor-category-badge">Store Importance</div>
+                        <div class="factor-explained-header">
+                            <span class="factor-number">F3</span>
+                            <h4>Value Proposition</h4>
+                            <span class="key-predictor-badge"><i class="fas fa-key"></i> Key Predictor</span>
+                        </div>
+                        <p class="factor-description">Economic value factors including location, price offers, vouchers/coupons, return policy, digital payment, loyalty programs, and branded merchandise.</p>
+                        <div class="factor-stats">
+                            <span class="factor-stat"><strong>7 items</strong></span>
+                            <span class="factor-stat">α = 0.68</span>
+                            <span class="factor-stat">10.2% variance</span>
+                        </div>
+                    </div>
+                    
+                    <div class="factor-explained-card visual-merch">
+                        <div class="factor-category-badge vm">Visual Merchandising</div>
+                        <div class="factor-explained-header">
+                            <span class="factor-number">F4</span>
+                            <h4>VM – External Appeal</h4>
+                        </div>
+                        <p class="factor-description">Exterior visual elements that attract customers including window displays, signage/graphics, and entrance promotional displays.</p>
+                        <div class="factor-stats">
+                            <span class="factor-stat"><strong>3 items</strong></span>
+                            <span class="factor-stat">α = 0.68</span>
+                            <span class="factor-stat">8.0% variance</span>
+                        </div>
+                    </div>
+                    
+                    <div class="factor-explained-card visual-merch">
+                        <div class="factor-category-badge vm">Visual Merchandising</div>
+                        <div class="factor-explained-header">
+                            <span class="factor-number">F5</span>
+                            <h4>VM – In-Store Experience</h4>
+                        </div>
+                        <p class="factor-description">Interior sensory and technological elements including creative displays, lighting/music, communication elements, and AI/VR/AR technology.</p>
+                        <div class="factor-stats">
+                            <span class="factor-stat"><strong>4 items</strong></span>
+                            <span class="factor-stat">α = 0.68</span>
+                            <span class="factor-stat">6.5% variance</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="factors-key-insight">
+                    <i class="fas fa-lightbulb"></i>
+                    <p><strong>Key Insight:</strong> Together, these 5 factors explain <strong>51.6%</strong> of total variance. The Path Analysis reveals that only <strong>Value Proposition (F3)</strong> significantly predicts both VM factors, suggesting that consumers who prioritize economic value are more responsive to visual merchandising efforts.</p>
+                </div>
+            </div>
+
+            <!-- Top Attributes -->
+            <div class="top-attributes">
+                <h3 class="subsection-title"><i class="fas fa-star"></i> Most Important Store Attributes</h3>
+                <div class="attributes-ranking">
+                    <div class="rank-item rank-1">
+                        <span class="rank-badge">1</span>
+                        <span class="rank-name">Store Cleanliness</span>
+                        <span class="rank-score">4.71</span>
+                    </div>
+                    <div class="rank-item rank-2">
+                        <span class="rank-badge">2</span>
+                        <span class="rank-name">Parking</span>
+                        <span class="rank-score">4.61</span>
+                    </div>
+                    <div class="rank-item rank-3">
+                        <span class="rank-badge">3</span>
+                        <span class="rank-name">Digital Payment</span>
+                        <span class="rank-score">4.61</span>
+                    </div>
+                    <div class="rank-item">
+                        <span class="rank-badge">4</span>
+                        <span class="rank-name">Fast Checkout</span>
+                        <span class="rank-score">4.48</span>
+                    </div>
+                    <div class="rank-item">
+                        <span class="rank-badge">5</span>
+                        <span class="rank-name">Return Policy</span>
+                        <span class="rank-score">4.44</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Practical Implications -->
+            <div class="implications-container">
+                <h3 class="subsection-title"><i class="fas fa-lightbulb"></i> Practical Implications</h3>
+                <div class="implications-grid">
+                    <div class="implication-card">
+                        <div class="implication-icon"><i class="fas fa-broom"></i></div>
+                        <h4>Prioritize Hygiene & Convenience</h4>
+                        <p>Store cleanliness, parking, and fast checkout are the top priorities. Retailers should invest in maintaining clean environments and streamlining the checkout process.</p>
+                    </div>
+                    <div class="implication-card">
+                        <div class="implication-icon"><i class="fas fa-tags"></i></div>
+                        <h4>Align VM with Value Messaging</h4>
+                        <p>Since value perception drives VM response, visual merchandising should emphasize pricing, promotions, and value-for-money messaging to maximize impact.</p>
+                    </div>
+                    <div class="implication-card">
+                        <div class="implication-icon"><i class="fas fa-user-friends"></i></div>
+                        <h4>Segment-Specific Strategies</h4>
+                        <p>Target "Value-Seeking Visual Shoppers" with immersive store experiences. For "Low-Involvement" shoppers, focus on efficiency and convenience.</p>
+                    </div>
+                    <div class="implication-card">
+                        <div class="implication-icon"><i class="fas fa-briefcase"></i></div>
+                        <h4>Occupation-Based Marketing</h4>
+                        <p>Different occupational groups respond differently to store atmosphere and external VM. Consider tailoring marketing communications by occupation.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Limitations & Future Research -->
+            <div class="limitations-container">
+                <h3 class="subsection-title"><i class="fas fa-exclamation-triangle"></i> Limitations & Future Research</h3>
+                <div class="limitations-grid">
+                    <div class="limitation-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h5>Geographic Scope</h5>
+                            <p>Sample limited to specific retail environment; results may vary across regions and cultures.</p>
+                        </div>
+                    </div>
+                    <div class="limitation-item">
+                        <i class="fas fa-female"></i>
+                        <div>
+                            <h5>Gender Imbalance</h5>
+                            <p>Female-skewed sample (62.3%); future research should aim for balanced representation.</p>
+                        </div>
+                    </div>
+                    <div class="limitation-item">
+                        <i class="fas fa-percentage"></i>
+                        <div>
+                            <h5>Variance Explained</h5>
+                            <p>Regression models explain modest variance (7-9%); other factors influence VM perceptions.</p>
+                        </div>
+                    </div>
+                    <div class="limitation-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h5>Cross-Sectional Design</h5>
+                            <p>Longitudinal studies could reveal how preferences evolve over time.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Final Summary Stats -->
+            <div class="final-stats">
+                <div class="final-stat-card">
+                    <span class="final-stat-value">154</span>
+                    <span class="final-stat-label">Total Respondents</span>
+                </div>
+                <div class="final-stat-card">
+                    <span class="final-stat-value">23</span>
+                    <span class="final-stat-label">Variables Analyzed</span>
+                </div>
+                <div class="final-stat-card">
+                    <span class="final-stat-value">5</span>
+                    <span class="final-stat-label">Factors Extracted</span>
+                </div>
+                <div class="final-stat-card">
+                    <span class="final-stat-value">2</span>
+                    <span class="final-stat-label">Consumer Segments</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3><i class="fas fa-chart-line"></i> Consumer Experience Research</h3>
+                    <p>A comprehensive statistical analysis for academic research on consumer behavior in retail environments.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#demographics">Demographics</a></li>
+                        <li><a href="#factor-analysis">Factor Analysis</a></li>
+                        <li><a href="#clustering">Segmentation</a></li>
+                        <li><a href="#conclusions">Conclusions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-stats">
+                    <h4>Analysis Highlights</h4>
+                    <div class="footer-stat">
+                        <span class="footer-stat-value">0.799</span>
+                        <span class="footer-stat-label">Cronbach's α (Full Scale)</span>
+                    </div>
+                    <div class="footer-stat">
+                        <span class="footer-stat-value">0.754</span>
+                        <span class="footer-stat-label">KMO Score (Store Imp.)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Designed for PhD-level academic research.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
